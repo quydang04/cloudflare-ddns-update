@@ -4,7 +4,7 @@
 
 CLOUDFLARE_EMAIL="your_email@example.com" # Nhập mail mà bạn đang sử dụng cloudflare vào đây!
 CLOUDFLARE_API_KEY="your_cloudflare_api_key" # Nhập Global API key của bạn!
-DOMAIN="example.com"  # Dòng này đã thay cho dòng nhập zone id vì vật hãy nhập vào nhé!
+DOMAIN="example.com"  # Dòng này đã thay cho dòng nhập zone id vì vậy hãy nhập vào nhé!
 SUBDOMAIN="sub.example.com" # Hãy nhập domain mà bạn muốn cập nhật ddns vào đây!
 
 # Không cần thay đổi phần dưới đây
