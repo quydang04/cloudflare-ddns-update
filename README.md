@@ -13,11 +13,12 @@ chmod +x update.sh
 ````
 ./update.sh
 ````
-### Lưu ý: Trước khi chạy hãy nhớ chỉnh lại các phần như zone id, domain,v.v nhé. Chỉnh lại bằng lệnh
+### Lưu ý: Trước khi chạy hãy nhớ chỉnh lại các phần như zone id, domain,v.v nhé. 
+#### Để chỉnh lại bằng lệnh
 ````
 nano update.sh 
 ````
-### Hoặc 
+#### Hoặc 
 ````
 vim update.sh
 ````
