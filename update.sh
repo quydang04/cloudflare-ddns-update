@@ -16,7 +16,7 @@ echo "Đang cập nhật IP, vui lòng đợi trong giây lát!!!!"
 echo "------------------------------------------------------------------------"
 echo ""
 
-IP=$(curl -s https://api.ipify.org)
+IP=$(curl -s https://quydang.name.vn/ip.php)
 ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
