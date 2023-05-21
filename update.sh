@@ -1,6 +1,6 @@
-#!/bin/bash
-
 #Last modified: 21/05/2023
+
+#!/bin/bash
 
 # Cập nhật thông tin dưới đây
 
