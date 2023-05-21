@@ -1,4 +1,5 @@
 # Cloudflare DDNS Update
+#### Cập nhật cho tên miền của bạn thông qua Cloudflare API
 ## Cách sử dụng
 ##### Bước 1: Tải file về máy
 ```` 
