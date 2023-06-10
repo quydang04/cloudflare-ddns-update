@@ -60,7 +60,7 @@ select option in "Cập nhật DDNS" "Thoát"; do
           --data '{"type":"A","name":"'$SUBDOMAIN'","content":"'$IP'","ttl":1,"proxied":false}')
         echo "$(date +'%d/%m/%Y %H:%M:%S'): Đã cập nhật bản ghi DNS cho $SUBDOMAIN từ $OLD_IP thành $IP"
         
-        echo " Đã thoát..."
+        echo "Đã thoát..."
         break
       fi
       ;;
