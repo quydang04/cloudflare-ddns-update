@@ -50,7 +50,7 @@ select option in "Cập nhật DDNS" "Thoát"; do
 
       if [ "$OLD_IP" == "$IP" ]; then
         echo "$(date +'%d/%m/%Y %H:%M:%S'): Không cần cập nhật cho $SUBDOMAIN (IP hiện tại: $OLD_IP)"
-        echo "Thoát..."
+        echo "Đã cập nhật thành công!"
         break
       else
         update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
@@ -60,12 +60,12 @@ select option in "Cập nhật DDNS" "Thoát"; do
           --data '{"type":"A","name":"'$SUBDOMAIN'","content":"'$IP'","ttl":1,"proxied":false}')
         echo "$(date +'%d/%m/%Y %H:%M:%S'): Đã cập nhật bản ghi DNS cho $SUBDOMAIN từ $OLD_IP thành $IP"
         
-        echo "Thoát..."
+        echo " Đã thoát..."
         break
       fi
       ;;
     "Thoát")
-      echo "Đã thoát."
+      echo "Tạm biệt bạn."
       break
       ;;
     *) echo "Tùy chọn không hợp lệ, vui lòng chọn lại.";;
