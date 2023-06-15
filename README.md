@@ -3,7 +3,7 @@
 ## Cách sử dụng
 ##### Bước 1: Tải file về máy
 ```` 
-wget https://t.ly/lVXM
+wget https://raw.githubusercontent.com/quydang04/cloudflare-ddns-update/main/cloudflare_ddns_update.sh
 ````
 ##### Bước 2: Cấp cho file có quyền thực thi
 ````
