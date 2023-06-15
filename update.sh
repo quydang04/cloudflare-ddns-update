@@ -2,14 +2,14 @@
 #!/bin/bash
 
 # Cập nhật thông tin dưới đây
-CLOUDFLARE_EMAIL="your_email@example.com"
-CLOUDFLARE_API_KEY="your_cloudflare_api_key"
-DOMAIN="example.com"
-SUBDOMAIN="sub.example.com"
+CLOUDFLARE_EMAIL="" // Nhập email mà bạn đã đăng ký tài khoản cloudflare.
+CLOUDFLARE_API_KEY="" // Nhập api key cho tài khoản cloudflare của bạn.
+DOMAIN="" // Dòng này thay cho ZONE_ID, nếu bạn không nhập thì sẽ không cập nhật được cho tên miền của bạn.
+SUBDOMAIN="" // Nhập tên miền mà bạn muốn cập nhật ddns vào đây!
 
-# Kiểm tra và thông báo nếu thiếu thông số
+# Kiểm tra và thông báo nếu thiếu các thông tin
 if [[ -z "$CLOUDFLARE_EMAIL" || -z "$CLOUDFLARE_API_KEY" || -z "$DOMAIN" || -z "$SUBDOMAIN" ]]; then
-  echo "Vui lòng cung cấp đầy đủ thông số: CLOUDFLARE_EMAIL, CLOUDFLARE_API_KEY, DOMAIN, SUBDOMAIN."
+  echo "Vui lòng cung cấp đầy đủ thông tin như CLOUDFLARE_EMAIL, CLOUDFLARE_API_KEY, DOMAIN, SUBDOMAIN."
   exit 1
 fi
 
