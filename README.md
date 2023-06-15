@@ -17,7 +17,7 @@ chmod +x cloudflare_ddns_update.sh
 ````
 crontab -e
 ````
-##### Sau đó:
+##### Sau đó
 ````
 */3 * * * * /path/to/cloudflare_ddns_update.sh > /dev/null
 ````
