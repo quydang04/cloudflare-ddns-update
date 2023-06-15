@@ -3,7 +3,7 @@
 ## Cách sử dụng
 ##### Bước 1: Tải file về máy
 ```` 
-wget https://t.ly/jd55t
+wget https://t.ly/lVXM
 ````
 ##### Bước 2: Cấp cho file có quyền thực thi
 ````
