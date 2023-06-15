@@ -19,7 +19,7 @@ crontab -e
 ````
 ##### Sau đó:
 ````
-*/3 * * * * path/to/cloudflare_ddns_update.sh
+*/3 * * * * path/to/cloudflare_ddns_update.sh > dev/null
 ````
 ### Lưu ý: Trước khi chạy hãy nhớ chỉnh lại các phần như zone id, domain,v.v nhé. 
 #### Để chỉnh lại bằng lệnh
