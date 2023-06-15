@@ -44,7 +44,6 @@ fi
 
 if [ "$OLD_IP" == "$IP" ]; then
   echo "$(date +'%d/%m/%Y %H:%M:%S'): Không cần cập nhật cho $SUBDOMAIN (IP hiện tại: $OLD_IP)"
-  echo "Đã cập nhật thành công!"
 else
   update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
     -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
