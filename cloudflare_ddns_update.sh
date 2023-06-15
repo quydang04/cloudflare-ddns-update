@@ -1,7 +1,7 @@
 # Last modified: 15/06/2023
 #!/bin/bash
 
-# Cập nhật thông tin dưới đây
+# Cập nhật hoặc chỉnh sửa thông tin dưới đây
 CLOUDFLARE_EMAIL="" # Nhập email mà bạn đã đăng ký tài khoản cloudflare.
 CLOUDFLARE_API_KEY="" # Nhập api key cho tài khoản cloudflare của bạn.
 DOMAIN="" # Dòng này thay cho ZONE_ID, nếu bạn không nhập thì sẽ không cập nhật được cho tên miền của bạn.
