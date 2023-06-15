@@ -7,6 +7,8 @@ CLOUDFLARE_API_KEY="" # Nhập api key cho tài khoản cloudflare của bạn.
 DOMAIN="" # Dòng này thay cho ZONE_ID, nếu bạn không nhập thì sẽ không cập nhật được cho tên miền của bạn.
 SUBDOMAIN="" # Nhập tên miền mà bạn muốn cập nhật ddns vào đây!
 
+# Không cần thay đổi phần dưới đây, nếu bạn thay đổi sẽ gây ra lỗi!!!!
+
 # Kiểm tra và thông báo nếu thiếu các thông tin
 if [[ -z "$CLOUDFLARE_EMAIL" || -z "$CLOUDFLARE_API_KEY" || -z "$DOMAIN" || -z "$SUBDOMAIN" ]]; then
   echo "Vui lòng cung cấp đầy đủ thông tin như CLOUDFLARE_EMAIL, CLOUDFLARE_API_KEY, DOMAIN, SUBDOMAIN."
