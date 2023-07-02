@@ -1,22 +1,22 @@
-# Last modified: 15/06/2023
+# Last modified: 02/07/2023
 #!/bin/bash
 
-# Cập nhật hoặc chỉnh sửa thông tin dưới đây
-CLOUDFLARE_EMAIL="" # Nhập email mà bạn đã đăng ký tài khoản cloudflare.
-CLOUDFLARE_API_KEY="" # Nhập api key cho tài khoản cloudflare của bạn.
-DOMAIN="" # Dòng này thay cho ZONE_ID, nếu bạn không nhập thì sẽ không cập nhật được cho tên miền của bạn.
-SUBDOMAIN="" # Nhập tên miền mà bạn muốn cập nhật ddns vào đây!
+# Cap nhat hoac chinh sua thong tin duoi day
+CLOUDFLARE_EMAIL="" # Nhap email ma ban da dang ky tai khoan cloudflare.
+CLOUDFLARE_API_KEY="" # Nhap api key cho tai khoan cloudflare cua ban.
+DOMAIN="" # Dong nay thay cho ZONE_ID, neu ban khong nhap thi se khong cap nhat duoc cho ten mien cua ban.
+SUBDOMAIN="" # Nhap ten mien ma ban muon cap nhat ddns vao day!
 
-# Không cần thay đổi phần dưới đây, nếu bạn thay đổi sẽ gây ra lỗi!!!!
+# Khong can thay doi phan duoi day, neu ban thay doi se gay ra loi!!!!
 
-# Kiểm tra và thông báo nếu thiếu các thông tin
+# Kiem tra va thong bao neu thieu cac thong tin
 if [[ -z "$CLOUDFLARE_EMAIL" || -z "$CLOUDFLARE_API_KEY" || -z "$DOMAIN" || -z "$SUBDOMAIN" ]]; then
-  echo "Vui lòng cung cấp đầy đủ thông tin như CLOUDFLARE_EMAIL, CLOUDFLARE_API_KEY, DOMAIN, SUBDOMAIN."
+  echo "Vui long cung cap day du thong tin nhu CLOUDFLARE_EMAIL, CLOUDFLARE_API_KEY, DOMAIN, SUBDOMAIN."
   exit 1
 fi
 
 echo "------------------------------------------------------------------------"
-echo "Đang cập nhật IP, vui lòng đợi trong giây lát!"
+echo "Dang cap nhat IP, vui long doi trong giay lat!"
 echo "------------------------------------------------------------------------"
 echo ""
 
@@ -27,7 +27,7 @@ ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAI
   -H "Content-Type: application/json" | grep -Po '(?<="id":")[^"]*' | head -1)
 
 if [ -z "$ZONE_ID" ]; then
-  echo "Không tìm thấy tên miền $DOMAIN trong bản ghi DNS của Cloudflare. Vui lòng kiểm tra lại!"
+  echo "Khong tim thay ten mien $DOMAIN trong ban ghi DNS cua Cloudflare. Vui long kiem tra lai!"
   exit 1
 fi
 
@@ -40,19 +40,19 @@ RECORD_ID=$(echo "$record_info" | grep -Po '(?<="id":")[^"]*' | head -1)
 OLD_IP=$(echo "$record_info" | grep -Po '(?<="content":")[^"]*')
 
 if [ -z "$RECORD_ID" ]; then
-  echo "Bản ghi DNS cho tên miền $SUBDOMAIN chưa được thêm hoặc không hợp lệ trên Cloudflare. Vui lòng kiểm tra lại!"
+  echo "Ban ghi DNS cho ten mien $SUBDOMAIN chua duoc them hoac khong hop le tren Cloudflare. Vui long kiem tra lai!"
   exit 1
 fi
 
 if [ "$OLD_IP" == "$IP" ]; then
-  echo "$(date +'%d/%m/%Y %H:%M:%S'): Không cần cập nhật cho $SUBDOMAIN (IP hiện tại: $OLD_IP)"
+  echo "$(date +'%d/%m/%Y %H:%M:%S'): Khong can cap nhat cho $SUBDOMAIN (IP hien tai: $OLD_IP)"
 else
   update=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
     -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
     -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
     -H "Content-Type: application/json" \
     --data '{"type":"A","name":"'$SUBDOMAIN'","content":"'$IP'","ttl":1,"proxied":false}')
-  echo "$(date +'%d/%m/%Y %H:%M:%S'): Đã cập nhật bản ghi DNS cho $SUBDOMAIN từ $OLD_IP thành $IP"
+  echo "$(date +'%d/%m/%Y %H:%M:%S'): Da cap nhat ban ghi DNS cho $SUBDOMAIN tu $OLD_IP thanh $IP"
 fi
 
-echo "Đã thoát..."
+echo "Da thoat..."
