@@ -1,4 +1,4 @@
-# Last modified: 02/07/2023
+# Last modified: 16/07/2023
 #!/bin/bash
 
 # Cap nhat hoac chinh sua thong tin duoi day
