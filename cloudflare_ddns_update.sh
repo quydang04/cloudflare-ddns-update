@@ -20,7 +20,7 @@ echo "Dang cap nhat IP, vui long doi trong giay lat!"
 echo "------------------------------------------------------------------------"
 echo ""
 
-IP=$(curl -s https://quydang.name.vn/ip.php)
+IP=$(curl -s https://ip.quydang.name.vn)
 ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
