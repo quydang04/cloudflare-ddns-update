@@ -1,4 +1,5 @@
-# Last modified: 16/07/2023
+# Date created: 16/07/2023
+# Last modified: 17/02/2024
 #!/bin/bash
 
 # Cap nhat hoac chinh sua thong tin duoi day
@@ -20,7 +21,7 @@ echo "Dang cap nhat IP, vui long doi trong giay lat!"
 echo "------------------------------------------------------------------------"
 echo ""
 
-IP=$(curl -s https://ip.quydang.name.vn)
+IP=$(curl -s https://api.ipify.org)
 ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
